@@ -1,0 +1,92 @@
+// Place all the styles related to the notes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.container-narrow {
+margin: 0 auto;
+max-width: 700px;
+}
+
+textarea{
+	width: 500px;
+
+}
+
+.table.mynotes{
+border-color: #D5D5D5;
+position: relative;
+border: 1px solid #DDD;
+border-radius: 2px;
+border-radius:5px;
+border-collapse: true;
+}
+
+.table { 
+border-collapse: separate;
+}
+
+
+.timestamp{
+	font-size: 10px;
+	color: #888
+
+}
+
+.viewnote {
+	
+min-height: 200px;
+border-color: #D5D5D5;
+position: relative;
+border: 1px solid #DDD;
+border-radius: 2px;
+border-radius:5px;
+border-collapse: true;
+padding: 0px;
+}
+
+.topheading{
+font-size: 17px;
+font-weight: bold;
+width: 100%;
+height: 47px;
+padding: 10px 10px 4px;
+border: 1px solid #E5E5E5;
+border-width: 1px;
+background: whiteSmoke;
+-moz-box-sizing: border-box;
+ 
+box-sizing: border-box;
+
+}
+
+.notecontent {
+	
+ font-size: 11px;
+width: 100%;
+height: 100%;
+padding: 10px 10px 4px;
+ -moz-box-sizing: border-box;
+ 
+box-sizing: border-box;
+
+ }
+
+.topheadingbutton {
+	
+	float: right;
+}
+
+.form-search {
+	padding: 10px;
+}
+
+.pagination a {
+	
+float: left;
+padding: 0 4px;
+line-height: 18px;
+text-decoration: none;
+border: 0px solid #DDD;
+border-left-width: 0;
+}

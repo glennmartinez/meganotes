@@ -1,0 +1,14 @@
+<table class="table mynotes">
+  <tr>
+   </tr>
+
+<% @notes.each do |note| %>
+  <tr>
+    <td><b><%= link_to note.name, note %> </b>
+    <div class="timestamp"> Last Update:  <%= time_ago_in_words(note.updated_at) %> </div> </td>
+    <td><%= link_to 'Edit', edit_note_path(note) %></td>
+    <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate @notes, :page_links => true %> 

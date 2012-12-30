@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<h1>MegaNotes</h1>
+
+ <div class="viewnote">
+	<div class="topheading">
+ <%= @note.name  %>  
+ 	<div class="topheadingbutton">
+ <%= link_to 'Edit', edit_note_path(@note), :class => "btn" %> 
+ <%= link_to 'Back', notes_path, :class => "btn" %>
+
+ </div>
+ </div>
+  
+<p>
+	<div class="notecontent">
+
+  <%= @note.content %>
+  </div>
+</p>
+
+
+ </div>

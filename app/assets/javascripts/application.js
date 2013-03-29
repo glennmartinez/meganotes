@@ -11,7 +11,15 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery.ui.all
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require turbolinks
+//= require autocomplete-rails
+//= require jquery_nested_form
+
 //= require notes
+
+//= require bootstrap-wysihtml5
+
 //= require_tree .

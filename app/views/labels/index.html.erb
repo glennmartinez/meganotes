@@ -1,0 +1,16 @@
+
+
+<table class="table mylabels">
+  <tr>
+   </tr>
+
+<% @labels.each do |label| %>
+  <tr>
+    <td><b><%= link_to label.name, label %> </b>
+    <div class="timestamp"> Last Update:  <%= time_ago_in_words(label.updated_at) %> </div> </td>
+  </tr>
+<% end %>
+</table>
+ 
+
+ 

@@ -1,6 +1,8 @@
 class NotesController < ApplicationController
  require 'will_paginate/array' 
 
+ autocomplete :label, :name
+
   # GET /notes
   # GET /notes.json
   helper_method :sort_column, :sort_direction
@@ -29,6 +31,9 @@ class NotesController < ApplicationController
   def new
     @note = Note.new
 
+    @note.labelships.build
+
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @note }
@@ -42,6 +47,13 @@ class NotesController < ApplicationController
 
   # POST /notes
   # POST /notes.json
+
+
+  def get_label
+    # @quote = Quote.find(params[:quote_id])
+    @contractors = Contractor.search(params[:search])   
+  end
+
   def create
     @note = Note.new(params[:note])
 
@@ -55,6 +67,7 @@ class NotesController < ApplicationController
       end
     end
   end
+
 
   # PUT /notes/1
   # PUT /notes/1.json

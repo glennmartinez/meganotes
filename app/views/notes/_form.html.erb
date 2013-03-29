@@ -1,4 +1,12 @@
-<%= form_for(@note) do |f| %>
+ 
+
+<script type="text/javascript">
+  $('.content_editor').each(function(i, elem) {
+    $(elem).wysihtml5();
+  });
+</script>
+
+<%= nested_form_for (@note) do |f| %>
   <% if @note.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved:</h2>
@@ -17,9 +25,29 @@
   </div>
   <div class="field">
     <%= f.label :content %><br />
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :class => "content_editor" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+<h4>Labels: </h4>
+
+  <%= f.fields_for :labelships, :html =>{ :class => 'form-vertical' } do |builder| %>
+   <div class="labelships">
+
+    <%= builder.autocomplete_field :label_name, autocomplete_label_name_labels_path, :update_elements => {:id => "##{form_tag_id(builder.object_name, :label_id)}" },:class => "input-medium",:placeholder => "Search" %>
+    <%= builder.hidden_field :label_id  %> 
+    <%= builder.link_to_remove raw('<i class="icon-trash"></i>'),:class => 'btn btn-small btn-danger'   %>
+
+  <% end %>
+</div>
+
+  <div class="form-inline">
+      <%= f.label "Add Label:", :class => 'form-vertical' %>
+      <%= f.link_to_add raw('<i class="icon-plus-sign"></i>'), :labelships, :class => 'btn btn-small btn-primary' %>
+
+  </div>
+  <div class="actions form-inline">
+      <%= f.submit "Save Note", :class => "btn btn-success" %>
+    
   </div>
 <% end %>
+
+ 
